@@ -31,6 +31,15 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
+        // atualiza o tamanho da janela ao redimensionar
+        window.addEventListener('resize', function () {
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+        
         // cria um cubo
         var geometry = new THREE.TorusGeometry( 10, 3, 16, 100 ); 
 
