@@ -11,7 +11,7 @@ Funcionamento de Three.js
  Programa em HTML que utiliza a biblioteca Three.js para renderizar um grafico em 3D interativo.
 </p>
 
-📌 Programa exemplo do funcionamento da biblioteca Three.js
+📌 Exemplo do funcionamento da biblioteca Three.js
 ------------------
 <img src="pila.png" alt="page-home">
 ## Sintaxe para executar:
