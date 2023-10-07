@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Geometria</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r132/three.min.js">
+         // importa a biblioteca do three.js da nuvem cloudflare</script> 
+
+    <script>
+        // cria a cena e a camera
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        // cria o renderizador
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // cria um cubo
+        var geometry = new THREE.TorusGeometry( 10, 3, 16, 100 ); 
+
+        // cria um material, cor e textura
+        var material = new THREE.MeshBasicMaterial({
+            color: 0xffff00, wireframe: true
+        });
+
+        // cria o cilindro com a geometria e o material
+        var torus = new THREE.Mesh(geometry, material);
+        scene.add(torus);
+
+        // posiciona a camera
+        camera.position.z = 20;
+
+        // logica do jogo
+        var update = function () {
+            torus.rotation.x += 0.01;
+            torus.rotation.y += 0.005;
+        };
+
+        // desenha a cena
+        var render = function () {
+            renderer.render(scene, camera);
+        };
+
+        // loop do jogo
+        var GameLoop = function () {
+            requestAnimationFrame(GameLoop);
+            update();
+            render();
+        };
+
+        // inicia o jogo
+        GameLoop();
+
+    </script>
+
+</body>
+
+</html>
