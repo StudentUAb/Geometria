@@ -13,7 +13,7 @@ Funcionamento de Three.js
 
 📌 Exemplo do funcionamento da biblioteca Three.js
 ------------------
-<img src="pila.png" alt="page-home">
+
 ## Sintaxe para executar:
 
 <pre>docker compose up -d </pre>
